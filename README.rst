@@ -22,18 +22,15 @@ Patch `Launch Darkly`_ feature flags for unit testing
 * Documentation: https://ld-feature-patch.readthedocs.io/en/latest/.
 
 
-Features
+Usage
 --------
 
 .. code:: python
 
     from ld_patch import patch_feature
-    from unittest import TestCase
-
-    class MyTestCase(TestCase):
 
     @patch_feature("my.flag.key", True)
-    def test_my_code(self):
+    def test_my_code():
 
         # Feature defaults to False
         show_feature = ldclient.variation(
@@ -45,7 +42,9 @@ Features
         # But patch_feature set it to True
         assert show_feature == True
 
+
 Installation
+------------
 
 .. code:: bash
 

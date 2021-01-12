@@ -6,8 +6,8 @@ LD Feature Patch
 .. image:: https://img.shields.io/pypi/v/ld_patch.svg
         :target: https://pypi.python.org/pypi/ld_patch
 
-.. image:: https://img.shields.io/travis/pymetrics/ld_patch.svg
-        :target: https://travis-ci.com/pymetrics/ld_patch
+.. image:: https://img.shields.io/travis/pymetrics/ld-feature-patch.svg
+        :target: https://travis-ci.com/pymetrics/ld-feature-patch
 
 .. image:: https://readthedocs.org/projects/ld-patch/badge/?version=latest
         :target: https://ld-patch.readthedocs.io/en/latest/?badge=latest

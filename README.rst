@@ -9,8 +9,8 @@ LD Feature Patch
 .. image:: https://img.shields.io/travis/pymetrics/ld-feature-patch.svg
         :target: https://travis-ci.com/pymetrics/ld-feature-patch
 
-.. image:: https://readthedocs.org/projects/ld-patch/badge/?version=latest
-        :target: https://ld-patch.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/ld-feature-patch/badge/?version=latest
+        :target: https://ld-feature-patch.readthedocs.io/en/latest/
         :alt: Documentation Status
 
 
@@ -19,7 +19,7 @@ Patch `Launch Darkly`_ feature flags for unit testing
 
 
 * Free software: Apache Software License 2.0
-* Documentation: https://ld-patch.readthedocs.io.
+* Documentation: https://ld-feature-patch.readthedocs.io/en/latest/.
 
 
 Features

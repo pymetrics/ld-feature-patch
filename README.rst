@@ -35,7 +35,7 @@ Usage
         # Feature defaults to False
         show_feature = ldclient.variation(
             "my.flag.key",
-            {"key": "test@example.com":},
+            "test@example.com",
             False
         )
 

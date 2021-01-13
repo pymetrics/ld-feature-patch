@@ -19,7 +19,7 @@ repos:
       language_version: python3.8
     - repo: local
       hooks:
-          - id: test-all
-            name: Test All
+          - id: test
+            name: pytest
             language: system
-            entry: make test-all
+            entry: make test

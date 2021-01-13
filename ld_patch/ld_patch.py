@@ -28,7 +28,6 @@ class patch_feature:
             attr_value = getattr(klass, attr)
             if not hasattr(attr_value, "__call__"):
                 continue
-            print(f"PATCHING {klass.__name__}.{attr}")
             patcher = self.copy()
             setattr(klass, attr, patcher(attr_value))
         return klass

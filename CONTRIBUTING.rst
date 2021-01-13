@@ -57,24 +57,24 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `ld_patch` for local development.
+Ready to contribute? Here's how to set up `ld-feature-patch` for local development.
 
-1. Fork the `ld_patch` repo on GitHub.
+1. Fork the `ld-feature-patch` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/ld_patch.git
+    $ git clone git@github.com:your_name_here/ld-feature-patch.git
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv ld_patch
-    $ cd ld_patch/
+    $ mkvirtualenv ld-feature-patch
+    $ cd ld-feature-patch/
     $ python -m pip install -e .
 
-4. Install dev dependencies:
+4. Install dev dependencies::
 
     $ python -m pip install -r requirements_dev.txt
 
-5. Set up pre-commit_:
+5. Set up pre-commit_::
 
     $ python -m pip install pre-commit
     $ pre-commit install
@@ -90,6 +90,9 @@ Ready to contribute? Here's how to set up `ld_patch` for local development.
 
     $ flake8 ld_patch tests
     $ make test
+
+   If ``make test`` fails, make sure you've run ``python -m pip install -e .``
+   (don't forget the ``.`` at the end!), and try again.
 
 8. Before committing, format your code with Black_. Optionally, configure
    your editor to format on save.
@@ -139,3 +142,4 @@ Travis will then deploy to PyPI if tests pass.
 
 
 .. _pre-commit: https://pre-commit.com/
+.. _Black: https://github.com/psf/black#installation-and-usage

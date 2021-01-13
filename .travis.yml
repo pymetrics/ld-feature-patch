@@ -21,7 +21,7 @@ deploy:
     distributions: sdist bdist_wheel
     user: pymdevs
     password:
-        secure: PLEASE_REPLACE_ME
+        secure: "K0mSPZLgVlwc+FSerKXI/e9SWtQ6q63Y/LXjTuScguufCgnvvSqfCEkIatPv2r+H0p/9mr15YUoXnSo0bNEVuSBX5gMAQ8WE0qVIEJcF6aFCdNl2oHaip1qkaUbD2Iyy+N5ehBeu7J6O8TAh3fhQ4vn5XJYfOFwk+bv9b6Ksaqo0xQLilkxYRuxoQXkHugO/+MQX/5PaRhuK9TsbAOq+vUeEQBiTPn/RPeDwDe+NWlGxBdZt0+TxjWoRyMRxQbpuYP0DWMoHoOH3uYKcQw1liwkt41WydrLZRk44IlKGL7PzuOrJps+tv0GGfYq+dh9tz61IM2Jo3ChFkmnD3CwbehYD63G3Bpu18XJYj0joPu31WZveBPF+qmLy2HIbGO9+5Nw0umqlNpElw3VcwmpVW55XDkVNoIWj8YCmM4bs99TuPW2bqwzFNrjauRR4cSk0TipLQrgGa7V2RYhvAXEc5WBcc9PvtGKEIJMFcSODZ0a8jps6+INacRNd8H8U63uoz+7q3dX2JLoFt5IqmJXVxisRGF0s58uPAMtpH/PF3HZHWfoIHeNYVKvIxETuG245JgFY7dPRq0WOEZbBTLUjSHcjupVF+H5JP8c0tNYKKNzFTD5DGyp7awc9mjbDGxnCruQ+N+3kxlbEnSbBRCn6YP86DobT5AzB6kWJ1VvsY7E="
     on:
         tags: true
         repo: pymetrics/ld-feature-patch

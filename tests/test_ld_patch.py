@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 
 from unittest import TestCase
+from unittest.mock import patch
 
 import ldclient
 from ldclient.config import Config
@@ -86,3 +87,10 @@ def test_pytest_style():
 def test_assert_stacked_pytest():
     assert get_feature_status("pytest-1")
     assert get_feature_status("pytest-2")
+
+
+def test_patch_feature_lazy_client_init():
+    """Don't init the LD client at decoration time"""
+    with patch.object(ldclient, "get", autospec=True):
+        patch_feature("test", True)
+        assert ldclient.get.call_count == 0

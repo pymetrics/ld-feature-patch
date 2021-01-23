@@ -1,7 +1,9 @@
-import ldclient
+import sys
 from unittest.mock import MagicMock
 from functools import wraps
 from typing import Any
+
+import ldclient
 
 
 TEST_PREFIX = "test_"
@@ -11,8 +13,23 @@ class patch_feature:
     def __init__(self, feature_flag: str, value: Any, client=None):
         self.feature_flag = feature_flag
         self.value = value
-        self.client = client or ldclient.get()
-        self.original_variation = self.client.variation
+        self._client = client
+        if self._client:
+            self._original_variation = self._client.variation
+        else:
+            self._original_variation = None
+
+    @property
+    def client(self):
+        if self._client is None:
+            self._client = ldclient.get()
+        return self._client
+
+    @property
+    def original_variation(self):
+        if self._original_variation is None:
+            self._original_variation = self.client.variation
+        return self._original_variation
 
     def copy(self):
         return patch_feature(
@@ -48,6 +65,13 @@ class patch_feature:
 
         variation = MagicMock(spec=self.original_variation)
         variation.side_effect = get_variation
+        if not self.client.is_offline():
+            print(
+                "patch_feature is patching an online Launch Darkly client. "
+                "Set the client config to be offline for testing, or "
+                "initalize the client earlier.",
+                file=sys.stderr,
+            )
         self.client.variation = variation
 
     def __exit__(self, exc_type, exc_value, exc_tb):

@@ -1,10 +1,9 @@
 import sys
-from unittest.mock import MagicMock
 from functools import wraps
 from typing import Any
+from unittest.mock import MagicMock, Mock
 
 import ldclient
-
 
 TEST_PREFIX = "test_"
 
@@ -43,7 +42,7 @@ class patch_feature:
                 continue
 
             attr_value = getattr(klass, attr)
-            if not hasattr(attr_value, "__call__"):
+            if not callable(attr_value):
                 continue
             patcher = self.copy()
             setattr(klass, attr, patcher(attr_value))
@@ -63,7 +62,10 @@ class patch_feature:
                 return self.value
             return self.original_variation(flag, user, default)
 
-        variation = MagicMock(spec=self.original_variation)
+        if not isinstance(self.original_variation, Mock):
+            variation = MagicMock(spec=self.original_variation)
+        else:
+            variation = MagicMock()
         variation.side_effect = get_variation
         if not self.client.is_offline():
             print(
@@ -78,7 +80,6 @@ class patch_feature:
         self.client.variation = self.original_variation
 
     def __call__(self, thing):
-
         if isinstance(thing, type):
             ret = self.decorate_class(thing)
         else:
